@@ -1,3 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* nada más aquí — cero @apply ni clases Tailwind */
+html { scroll-behavior: smooth; }
+
+
+/* Micro-animaciones reutilizables */
+.fade-in-up {
+  animation: fadeInUp 600ms ease both;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px) }
+  to   { opacity: 1; transform: translateY(0) }
+}
+
 html,
 body {
   background-color: #f8fafc;
@@ -34,3 +52,5 @@ code {
   justify-content: center;
   align-items: center;
 }
+
+
