@@ -395,7 +395,7 @@ const Portfolio = () => {
               <Github size={20} />
             </a>
             <a
-              href="https://x.com/jenntriana"
+              href="https://www.linkedin.com/in/jectrianama/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-gray-700 shadow-md hover:bg-indigo-600 hover:text-white transition-all hover:-translate-y-1 hover:scale-110 hover:shadow-lg"
