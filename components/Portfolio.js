@@ -60,23 +60,25 @@ const Portfolio = () => {
     {
       title: 'LocalBiplot — Explainable AI Visualization Engine',
       description:
-        'Interactive AI component that generates local visual explanations from complex data,  enabling transparent model decisions and trust for real-world applications.',
-      tags: ['Explainable AI', 'Data Visualization', 'Python'],
+        'LocalBiplot analyzes complex agricultural data from UAVs to accurately assess crop water status. It leverages UMAP to reveal hidden non-linear relationships and non-stationary patterns in data. The framework detects meaningful data clusters and projects them into a single, interpretable biplot visualization.This integration enhances understanding of spatial and temporal crop variability.',
+      tags: ['Explainable AI', 'Data Visualization', 'Python', 'UMAP'],
       link: 'https://github.com/UN-GCPDS/python-gcpds.localbiplot',
       logo: '/localbip_logo.png'
     },
     {
-      title: 'CrowdIntel (GCECDL) — Noise-Robust Annotation Engine',
+      title: 'Noise-Robust Deep Learning for Multiple Annotators Classification (GCECDL)',
       description:
-        'AI reliability module that detects and mitigates noisy or inconsistent human labels in large-scale crowdsourced training data — improving accuracy and trust in real-world AI deployments.',
-      tags: ['AI Reliability', 'Crowdsourcing', 'Noise-Robust Learning', 'Python'],
+        'An AI model designed to learn from multiple people labeling the same data (annotators), even when they disagree. GCECDL uses a noise-robust training strategy to identify which annotators are more reliable and improve overall classification accuracy.',
+      tags: [ 'Noise-Robust Learning', 'Python', 'Multiple Annotators',  'TensorFlow'],
       link: 'https://github.com/Jectrianama/GCCE_TEST',
       logo: '/GCECDL.png'
     },
     {
-      title: 'Computer Vision System',
-      description: 'Created an object detection system for automated quality control in manufacturing processes.',
-      tags: ['Computer Vision', 'YOLO', 'OpenCV']
+      title: 'Explainable AI for Precision Agriculture',
+      description: "An interpretable AI product combining TabNet's attention-driven feature extraction and UL-Biplot visual analytics to make agricultural data transparent, actionable, and trusted.",
+      tags: ["Explainable AI", "Precision Agriculture", "Visualization", "TabNet", "UMAP"],
+      link: "https://doi.org/10.1016/j.rineng.2025.106672",
+      logo: '/AgriExplain.png' 
     }
   ];
 
@@ -302,7 +304,7 @@ const Portfolio = () => {
                       <img
                         src={project.logo}
                         alt={project.title}
-                        className="max-h-64 max-w-64 object-contain"
+                        className="max-h-40 max-w-40 object-contain"
                       />
                     </div>
                   </a>
@@ -310,14 +312,30 @@ const Portfolio = () => {
                   // ✅ PROJECT 2 (GCECDL / CrowdIntel)
                   <a href="https://github.com/Jectrianama/GCCE_TEST" target="_blank" rel="noopener noreferrer">
                     <div className="h-60 bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center rounded-xl">
-                      <img src="/GCECDL.png" alt="CrowdIntel (GCECDL)" className="max-h-40 max-w-40 object-contain" />
+                      <img src="/GCECDL.png" alt="GCECDL" className="max-h-40 max-w-40 object-contain" />
+                    </div>
+                  </a>
+                ) : index === 2 ? (
+                  // PROJECT 3 - Computer Vision
+                  <a href={project.link} target="_blank" rel="noopener noreferrer">
+                    <div className="h-60 bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center rounded-xl">
+                      <img src="/AgriExplain.png" alt="AgriExplain" className="max-h-40 max-w-40 object-contain" />
+                    </div>
+                  </a>
+                ): project.logo ? (
+                  // CUALQUIER OTRO PROYECTO CON LOGO
+                  <a href={project.link} target="_blank" rel="noopener noreferrer">
+                    <div className="h-60 bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center rounded-xl">
+                      <img src={project.logo} alt={project.title} className="max-h-40 max-w-40 object-contain" />
                     </div>
                   </a>
                 ) : (
+                  // FALLBACK - Si no hay logo
                   <div className="h-60 bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white text-xl font-semibold">
-                    Project {index + 1}
+                    {project.title.split(' ')[0]}
                   </div>
                 )}
+                
                 <div className="p-8">
                   <h3 className="text-2xl font-bold text-gray-900 mb-3">
                     {project.title}
